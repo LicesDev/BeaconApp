@@ -1,0 +1,117 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+.navbar{
+  margin: auto;
+  background-color: #1c4369 !important;
+}
+
+.offcanvas{
+  background-color: #3a5c84 !important;
+}
+
+.fondo{
+  --background: #003357 !important;
+}
+.button{
+  background-color: #fff0 !important;
+  
+}
+.cartas{
+  margin-top: 60px;
+}
+
+
+ion-card {
+    margin: 15px;
+    position: relative;
+    
+    .card-content {
+      position: relative;
+      padding-left: 10px;
+      
+      .color-line {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+        background-color: green; // Reemplaza '#your-color' con el color que desees para la línea
+      }
+      
+      ion-card-header {
+        ion-card-title {
+          color: black;
+          font-size: 20px;
+        }
+      }
+  
+      ion-card-content {
+        color: gray;
+        font-size: 16px;
+      }
+    }
+    
+
+  }
+  .tabla {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+
+  }
+
+  
+  
+
+  ion-col {
+    border: solid 1px #000000;
+    text-align: center;
+  }
+   
+  ion-row{
+    background-color: #ffffff;
+    color: #000000;
+    border: solid 1px #000000;
+  }
+  ion-row.titulos{
+    background-color:  #3a5c84;
+    color: #fff;
+  }
+  ion-row.selected {
+    color: #000000;
+    background-color: #bfffff !important; /* Cambia esto al color que prefieras */
+  }
+  .icono{
+    width: 2em;
+    margin-left: -2em;
+    margin-right: 1em;
+  }
+
+.boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+  .botonqr{
+    width: 30%;
+    height: 60px;
+    margin-top: 2em;
+    background: #f8b31c !important;
+    border-radius: 5%;
+    font-size: large;
+    
+  }
+  .botonreporte{
+    width: 30%;
+    height: 60px;
+    margin-top: 2em;
+    background: rgb(18, 109, 170) !important;
+    border-radius: 5%;
+    font-size: large;
+  }
+
+  
+
+  

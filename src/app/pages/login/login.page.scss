@@ -1,0 +1,59 @@
+.fondo{
+    --background: rgb(248,179,28);
+    --background: linear-gradient(90deg, rgba(248, 178, 28, 0.575) 0%, rgba(11, 72, 113, 0.575) 30%, rgba(11, 72, 113, 0.705) 70%, rgba(248, 178, 28, 0.575) 100%);
+}
+
+ion-card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+  
+ion-card-title {
+    text-align: center;
+}
+  
+ion-button {
+    margin-top: 20px;
+}
+  
+p {
+    text-align: center;
+}
+
+.carta{
+    width: 80%;
+    margin: auto;
+
+    @media screen and (min-width: 768px) {
+        width: 70%;
+    }
+    @media screen and (min-width: 1000px) {
+        width: 40%;
+    }
+}
+
+.contenedor{
+    margin-top: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (min-width: 768px) {
+        margin-top: 7em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    @media screen and (min-width: 1000px) {
+        margin-top: 10em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.correo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icono{
+    width: 3em;
+}

@@ -1,0 +1,176 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.navbar{
+  margin: auto;
+  background-color: #1c4369 !important;
+}
+
+.offcanvas{
+  background-color: #3a5c84 !important;
+}
+
+.fondo{
+  --background: #003357 !important;
+}
+
+.button{
+  background-color: #fff0 !important;
+}
+
+.fondoQr{
+  margin: auto;
+  --background: #003357 !important;
+}
+
+.imgqr{
+  margin-left: 20px;
+  width: 40%;
+  height: 37em;
+  border: solid 4px #f8b31c;
+}
+
+.cartas{
+  margin-top: 60px;
+}
+
+ion-card {
+  margin: 15px;
+  position: relative;
+  
+  .card-content {
+    position: relative;
+    padding-left: 10px;
+    
+    .color-line {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background-color: green; // Reemplaza '#your-color' con el color que desees para la línea
+    }
+    
+    ion-card-header {
+      ion-card-title {
+        color: black;
+        font-size: 20px;
+      }
+    }
+
+    ion-card-content {
+      color: gray;
+      font-size: 16px;
+    }
+  }
+}
+
+.qr {
+  display: flex;
+  justify-content: space-between;
+
+  .imgqr {
+    width: 40%;
+    height: 37em;
+  }
+
+  .tabla {
+    width: 60%;
+  
+    ion-grid {
+      ion-col{
+        border: solid 1px black;
+        background-color:  #3a5c84;
+        border-radius: 15px;
+        
+      }
+      ion-row {
+        display: flex;
+        justify-content: space-between;
+        border: solid 1px black;
+        background-color: #ffffff;
+        color: #000000;
+        border-radius: 15px;
+      }
+      ion-row.titulos{
+        background-color:  #3a5c84;
+        color: #fff;
+        text-align: center;
+        border-radius: 15px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+      }
+      .table-container { // Añade estas reglas
+        height: 400px;
+        max-height: 400px; // Establece un tamaño máximo para el contenedor
+        overflow-y: auto; // Hace que el contenedor sea desplazable verticalmente
+        background-color: rgba(255, 255, 255, 0.729); // Hace que la tabla sea semi-transparente
+        border-radius: 15px;
+      }
+      table {
+        width: 100%; // Asegura que la tabla ocupe todo el ancho disponible
+        background-color: rgba(255, 255, 255, 0.5); // Hace que la tabla sea semi-transparente
+        border-radius: 15px; // Redondea los bordes de la tabla
+        overflow: hidden; // Asegura que el contenido de la tabla no se desborde
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); // Añade una sombra a la tabla
+        th, td {
+          width: 33.33%; // Divide el ancho entre las tres columnas
+          text-align: center; // Centra el texto en las celdas
+          padding: 10px; // Añade un poco de espacio alrededor del texto en las celdas
+        }
+        tr {
+          background-color: rgba(255, 255, 255, 0.5); // Hace que las filas sean semi-transparentes
+          border-radius: 15px; // Redondea los bordes de las filas
+          margin-bottom: 10px; // Añade un poco de espacio entre las filas
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); // Añade una sombra a cada fila
+        }
+      }
+    }
+  }
+}
+
+.boton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.icono{
+  width: 3em;
+  margin-left: -2em;
+  margin-right: 1em;
+}
+
+.timer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.3));
+}
+
+.timer progress{
+  height: 80px;
+  width: 90%;
+  color: #f8b31c;
+}
+
+.anuncio{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  ion-item{
+    filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.462));
+    border-radius: 5%;
+  }
+}
+
+.botonqr{
+  width: 30%;
+  height: 60px;
+  margin-top: 2em;
+  background: #f8b31c !important;
+  border-radius: 5%;
+  font-size: large;
+  filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.3));
+}

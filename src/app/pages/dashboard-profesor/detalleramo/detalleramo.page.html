@@ -1,0 +1,84 @@
+<ion-content class="fondo">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+  <div class="navbar">
+    <nav class="navbar navbar-dark bg-dark fixed-top"> 
+      <div class="container-fluid" >
+        <ion-back-button defaultHref="/" style="margin-bottom: 40px; color: white;"  class="botonn"></ion-back-button>
+        <a class="navbar-brand" href="/dashboard-profesor"><img src="../../../../assets/img/Logo1.png"  width="70em" height="70em" style="margin-bottom: 20px; margin-top: -15px;"></a>
+        
+        <button style="margin-bottom: 20px; margin-top: -15px;" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>     
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">RegistrApp</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <ion-button fill="clear">
+                 <a class="nav-link active" href="/dashboard-profesor">Home</a>
+                </ion-button>
+              </li>
+              <li class="nav-item">
+                <ion-button fill="clear">
+                  <a class="nav-link active" href="/ajustes">Ajustes</a>
+                </ion-button>
+              </li>
+              <li class="nav-item">
+                <ion-button fill="clear" (click)="logOut()" >
+                  <a class="nav-link active">Log Out</a>
+                </ion-button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    </div>
+<div class="cartas">
+ <ion-card >
+    <div class="card-content">
+      <div class="color-line"></div>
+      <ion-card-header>
+        <ion-card-title>{{nombre}}</ion-card-title>
+      <div>
+        <ion-label>{{fecha2}}</ion-label>
+      </div>
+      </ion-card-header>
+    </div>
+  </ion-card>
+</div>
+    <div class="tabla">
+      <ion-grid>
+        <ion-row class="titulos">
+          <ion-col >Clase</ion-col>
+          <ion-col >Fecha</ion-col>
+          <ion-col >Estado</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let seccion of secciones;" (click)="selectRow(seccion)" [ngClass]="{'selected': selectedRow === seccion}">
+          <ion-col >{{seccion.nro_clase}}</ion-col>
+          <ion-col>{{seccion.fecha}}</ion-col>
+          <ion-col>
+            <span *ngIf="seccion.estado; else pendiente">Finalizado</span>
+            <ng-template #pendiente><span>Pendiente</span></ng-template>
+          </ion-col>
+        </ion-row>
+        
+      </ion-grid>
+    </div>
+    <div class="boton">
+      <button [routerLink]="['/dashboard-profesor/qr', descripcion, nombre, selectedRow.nro_clase, fecha2, descripcion, id_seccion, selectedRow.id_clase]" class="botonqr" expand="full" [disabled]="selectedRow.estado || fecha2 != selectedRow.fecha" >
+        <img src="../../../../assets/img/qr.png" class="icono">
+        Generar QR
+      </button>
+    </div>
+      <div class="boton">
+        <button class="button is-large is-responsive is-primary botonreporte" (click)="generarReporte()" [disabled]="!selectedRow.estado"><img src="../../../../assets/img/reporte.png" class="icono">
+          Generar Reporte</button>
+    </div>
+</ion-content>
+

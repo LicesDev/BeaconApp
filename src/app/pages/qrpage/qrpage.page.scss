@@ -1,0 +1,78 @@
+.fondo{
+  --background: rgb(11,72,113);
+}
+
+.cabecera{
+  --background: rgba(248,179,28,1);
+}
+
+.logo{
+  display: flex; // Añade esta línea para hacer que el logo sea un contenedor flexible
+  justify-content: center; // Centra la imagen horizontalmente
+}
+
+.logo img{
+  height: 180px;
+  width: 180px;
+  align-self: center; // Centra la imagen verticalmente
+}
+
+.contenedor{
+  width: 100%;
+  display: flex;
+  flex-direction: column; // Añade esta línea para organizar los elementos en una columna
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.card{
+
+  background: rgba(255, 255, 255, 0.207); // Fondo transparente
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); // Sombra de la caja
+  border-radius: 5px; // Bordes redondeados
+  padding: 20px; // Espacio interior
+  color: #c9c4c4; // Color de letra gris oscuro
+  width: 90%;
+}
+
+.card ul li{
+  font-size: 1.2em; // Tamaño de letra más grande
+  border-top: 1px solid #ddd; // Línea superior
+  border-bottom: 1px solid #ddd; // Línea inferior
+  padding: 10px 0; // Espacio vertical
+}
+
+.lector{
+  margin-top: 10em;
+}
+
+.boton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -10px;
+}
+.icono{
+  width: 2em;
+  margin-left: -2em;
+  margin-right: 1em;
+}
+.botonpresente{
+  width: 30%;
+  height: 60px;
+  background:  rgba(248,179,28,1) !important;
+  border-radius: 35%; /* Hace que el botón sea más ovalado */
+  font-size: large;
+  font-style:black;
+  font: bold;
+  filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.3));
+/* Añade un efecto de sombra al botón con mayor opacidad */
+}
+
+.qr{
+  margin-bottom: 2em;
+  filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.3));
+
+}

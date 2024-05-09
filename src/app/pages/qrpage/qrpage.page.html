@@ -1,0 +1,35 @@
+<ion-header no-border class="cabecera">
+  <ion-toolbar class="cabecera">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/ruta-pagina-anterior" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="fondo">
+  <div class="logo"><img src="../../../assets/img/Logo1.png" alt=""></div>
+  <div class="contenedor">
+
+
+    <div class="card">
+      <ul>
+        <li>Nombre: {{usuario.nombre}}</li>
+        <li>Apellido: {{usuario.apellido}}</li>
+        <li>RUT: {{usuario.rut}}</li>
+        <li>Asignatura: {{qrData1.nombre}}</li>
+        <li>Sección: {{qrData1.descripcion}}</li>
+        <li>Fecha: {{qrData1.fecha}}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="boton">
+    <button class="botonpresente" [disabled]="!qrRead" (click)="registrarAsistencia()">Presente</button>
+  </div>
+  
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button class="qr" id="open-toast" expand="block" color="warning" (click)="scanQR()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
