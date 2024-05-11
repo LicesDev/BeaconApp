@@ -7,28 +7,33 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="fondo">
-  <div class="logo"><img src="../../../assets/img/Logo1.png" alt=""></div>
+  <div class="logo"><img src="{{asignacion.foto}}" alt="Foto"></div>
   <div class="contenedor">
-
-
     <div class="card">
       <ul>
-        <li>Nombre: {{usuario.nombre}}</li>
-        <li>Apellido: {{usuario.apellido}}</li>
-        <li>RUT: {{usuario.rut}}</li>
-        <li>Asignatura: {{qrData1.nombre}}</li>
-        <li>Sección: {{qrData1.descripcion}}</li>
-        <li>Fecha: {{qrData1.fecha}}</li>
+        <li>Nombre: {{asignacion.nombre}}</li>
+        <li>Fecha: {{asignacion.fecha}}</li>
+        <li>Hora Inicio: {{asignacion.hora_inicio}}</li>
+        <li>Hora Fin: {{asignacion.hora_fin}}</li>
+
       </ul>
     </div>
   </div>
+  <div class="contenedor">
+    <div class="card">
+      <ul>
+        <li>Dirijase a: {{asignacion.direccion}}</li>
+        <li></li>
 
+      </ul>
+    </div>
+  </div>
   <div class="boton">
-    <button class="botonpresente" [disabled]="!qrRead" (click)="registrarAsistencia()">Presente</button>
+    <button class="botonpresente" [disabled]="" (click)="registrarAsistencia()">Presente</button>
   </div>
   
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button class="qr" id="open-toast" expand="block" color="warning" (click)="scanQR()">
+    <ion-fab-button class="qr" id="open-toast" expand="block" color="warning" >
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>

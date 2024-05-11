@@ -31,7 +31,7 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss"],
+            "styles": ["src/theme/variables.scss", "src/global.scss", "./node_modules/boxicons/css/boxicons.min.css"],
             "scripts": []
           },
           "configurations": {
@@ -114,6 +114,7 @@
             "styles": ["src/theme/variables.scss", "src/global.scss", "src/styles.scss",
             "./node_modules/bootstrap/dist/css/bootstrap.min.css",
             "./node_modules/bulma/css/bulma.min.css"],
+            
             
             "scripts": ["./node_modules/jquery/dist/jquery.min.js",
             "./node_modules/bootstrap/dist/js/bootstrap.min.js"]

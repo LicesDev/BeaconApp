@@ -13,8 +13,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'dashboard-alumnos',
-    loadChildren: () => import('./pages/dashboard-alumnos/dashboard-alumnos.module').then( m => m.DashboardAlumnosPageModule),
+    path: 'dashboard-guardia',
+    loadChildren: () => import('./pages/dashboard-guardia/dashboard-guardia.module').then( m => m.DashboardGuardiaPageModule),
     canActivate: [canActivate]
   },
   {
@@ -27,7 +27,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
   },
   {
-    path: 'qrpage/:id_seccion',
+    path: 'qrpage',
     loadChildren: () => import('./pages/qrpage/qrpage.module').then( m => m.QrpagePageModule),
     canActivate: [canActivate]
   },

@@ -18,8 +18,8 @@ import { throwError } from 'rxjs';
 export class LoginPage implements OnInit {
   usuario: string = '';
   pass: string = '';
-  profesor: string = '@profesorduoc.cl';
-  alumno: string = '@duocuc.cl';
+  administrador: string = '';
+  guardia: string = '';
   constructor(
     private router: Router,
     private toastCtrl: ToastController,
@@ -43,8 +43,8 @@ export class LoginPage implements OnInit {
     // Autenticación con el servidor
     this.http
       .post('https://osolices.pythonanywhere.com/login/', {
-        correo: this.usuario,
-        pass_field: this.pass,
+        nombre_usuario: this.usuario,
+        contrasena: this.pass,
       })
       .pipe(
         catchError(error => {
@@ -61,18 +61,19 @@ export class LoginPage implements OnInit {
           this.authService.login(resp); // Utiliza el método de inicio de sesión del servicio
   
           // Redirigir al usuario a la página correspondiente
-          if (this.usuario.includes(this.profesor)) {
-            console.log('Redirigiendo a /dashboard-profesor');
-            this.router.navigate(['/dashboard-profesor']);
-          } else if (this.usuario.includes(this.alumno)) {
-            console.log('Redirigiendo a /dashboard-alumno');
-            this.router.navigate(['/dashboard-alumnos']);
+          if (this.usuario.includes(this.guardia)) {
+            console.log('Redirigiendo a /dashboard-guardia');
+            this.router.navigate(['/dashboard-guardia']);
+          } else if (this.usuario.includes(this.administrador)) {
+            console.log('Redirigiendo a /dashboard-administrador');
+            this.router.navigate(['/dashboard-administrador']);
           }
         } else {
           this.mostrarAlerta('Usuario o contraseña incorrecto');
         }
       });
   }
+
   
 
   
