@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Geolocation } from '@capacitor/geolocation';
 
 
 @Component({
@@ -17,7 +18,13 @@ export class QrpagePage implements OnInit {
   asignacion: any;
   
   constructor(private router: Router, private http: HttpClient, private route: ActivatedRoute) {}
-
+  
+  ubicacion(){
+    const printCurrentPosition = async () => {
+      const coordinates = await Geolocation.getCurrentPosition();
+      console.log('Current position:', coordinates);
+    };
+  }
   goToDash() {
     setTimeout(() => {
       this.router.navigate(['/dashboard-alumnos']);
