@@ -9,22 +9,21 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="fondo">
-  <div class="logo"><img src="{{asignacion.foto}}" alt="Foto"></div>
+  <div class="logo"><img *ngIf="asignacion" [src]="asignacion?.foto" alt="Foto"></div>
   <div class="contenedor">
     <div class="card">
       <ul>
-        <li>Nombre: {{asignacion.nombre}}</li>
-        <li>Fecha: {{asignacion.fecha}}</li>
-        <li>Hora Inicio: {{asignacion.hora_inicio}}</li>
-        <li>Hora Fin: {{asignacion.hora_fin}}</li>
-
+        <li>Nombre: {{asignacion?.nombre}}</li>
+        <li>Fecha: {{asignacion?.fecha}}</li>
+        <li>Hora Inicio: {{asignacion?.hora_inicio}}</li>
+        <li>Hora Fin: {{asignacion?.hora_fin}}</li>
       </ul>
     </div>
   </div>
   <div class="contenedor">
     <div class="card">
       <ul>
-        <li class="mapa">Dirijase a: <br>{{asignacion.direccion}}<div id="map" style="width: 80%; height: 150px; border-radius: 10%;"></div> <!-- Cambia 'class' por 'id' -->
+        <li class="mapa">Dirijase a: <br>{{asignacion?.direccion}}<div id="map" style="width: 80%; height: 150px; border-radius: 10%;"></div> <!-- Cambia 'class' por 'id' -->
           <app-map [sedeLat]="-33.450435" [sedeLng]="-70.651068"></app-map></li>
       </ul>
       
@@ -33,7 +32,7 @@
   
   
   <div class="boton">
-    <button class="botonpresente" [disabled]="" (click)="registrarAsistencia()">Presente</button>
+    <button class="botonasistencia" id="asistencia" [disabled]="" (click)="registrarAsistencia()">Presente</button>
   </div>
   
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">

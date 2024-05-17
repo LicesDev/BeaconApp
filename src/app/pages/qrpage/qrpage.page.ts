@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Geolocation } from '@capacitor/geolocation';
-
+import { BleClient } from '@capacitor-community/bluetooth-le';
 
 @Component({
   selector: 'app-qrpage',
@@ -95,10 +95,50 @@ export class QrpagePage implements OnInit {
     this.timestamp = coordinates.timestamp;
     console.log('QRPage lat, lng:', this.lat, this.lng);
 
+    
   }
   
 
   finalizar(){
     this.router.navigate([`/dashboard-alumno`]);
   }
+
+  async ngAfterViewInit(){
+    await this.detectDevice();
+  }
+
+  async detectDevice() {
+    console.log('ESCANEANDO')
+    // Usa la dirección MAC del dispositivo Bluetooth
+    const deviceId = 'DC:0D:30:18:44:21';
+  
+    // Supongamos que tienes un botón en tu HTML con el id 'myButton'
+    let button = document.getElementById('asistencia') as HTMLButtonElement;
+  
+    if (!button) {
+      console.error('No se encontró el botón');
+      return;
+    }
+  
+    // Comienza a escanear dispositivos
+    await BleClient.requestLEScan(
+      {},
+      (scanResult) => {
+        if (scanResult.device.deviceId === deviceId) {
+          // Si el dispositivo está dentro del rango, activa el botón
+          button.disabled = false;
+        } else {
+          // Si el dispositivo no se encuentra en el rango, desactiva el botón
+          button.disabled = true;
+        }
+      }
+    );
+  
+    // Detén el escaneo después de un tiempo determinado
+    setTimeout(() => {
+      BleClient.stopLEScan();
+    }, 5000);
+  }
+  
 }
+
