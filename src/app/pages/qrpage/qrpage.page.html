@@ -4,6 +4,8 @@
       <ion-back-button defaultHref="/ruta-pagina-anterior" text=""></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css' rel='stylesheet' />
+
 </ion-header>
 
 <ion-content [fullscreen]="true" class="fondo">
@@ -22,12 +24,14 @@
   <div class="contenedor">
     <div class="card">
       <ul>
-        <li>Dirijase a: {{asignacion.direccion}}</li>
-        <li></li>
-
+        <li class="mapa">Dirijase a: <br>{{asignacion.direccion}}<div id="map" style="width: 80%; height: 150px; border-radius: 10%;"></div> <!-- Cambia 'class' por 'id' -->
+          <app-map [sedeLat]="-33.450435" [sedeLng]="-70.651068"></app-map></li>
       </ul>
+      
     </div>
   </div>
+  
+  
   <div class="boton">
     <button class="botonpresente" [disabled]="" (click)="registrarAsistencia()">Presente</button>
   </div>

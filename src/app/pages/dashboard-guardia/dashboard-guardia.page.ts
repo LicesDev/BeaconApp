@@ -3,12 +3,7 @@ import { Router } from '@angular/router';
 import * as bootstrap from 'bootstrap';
 import { HttpClient } from '@angular/common/http';
 import { AuthServiceService } from '../../auth-service.service';
-import {
-  Barcode,
-  BarcodeScanner,
-  BarcodeFormat,
-  LensFacing,
-} from '@capacitor-mlkit/barcode-scanning';
+
 
 @Component({
   selector: 'app-dashboard-guardia',
@@ -16,7 +11,6 @@ import {
   styleUrls: ['./dashboard-guardia.page.scss'],
 })
 export class DashboardGuardiaPage implements OnInit {
-  public barcodes: Barcode[] = [];
   asignaciones: any[] = [];
 
 

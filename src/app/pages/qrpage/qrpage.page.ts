@@ -16,15 +16,13 @@ export class QrpagePage implements OnInit {
   asistencia: any[] = [];
 
   asignacion: any;
-  
+
+  lat?: number;
+  lng?: number;
+  timestamp?: number;
   constructor(private router: Router, private http: HttpClient, private route: ActivatedRoute) {}
   
-  ubicacion(){
-    const printCurrentPosition = async () => {
-      const coordinates = await Geolocation.getCurrentPosition();
-      console.log('Current position:', coordinates);
-    };
-  }
+
   goToDash() {
     setTimeout(() => {
       this.router.navigate(['/dashboard-alumnos']);
@@ -70,9 +68,6 @@ export class QrpagePage implements OnInit {
     return toast.present();
   }
 
-
-  
- 
   datosUsuario(){
     const userData = window.localStorage.getItem('userData');
     if (userData) {
@@ -81,12 +76,27 @@ export class QrpagePage implements OnInit {
       this.usuario.apellido = JSON.parse(userData).apellido;
     }
   }
-  ngOnInit() {
-    this.datosUsuario();
+  async ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.asignacion = params;
     });
+    const options: PositionOptions = {
+      enableHighAccuracy: true,
+      maximumAge: 0, 
+      timeout: 10000
+    };
+    const coordinates = await Geolocation.getCurrentPosition(options);
+    console.log('Current position:', coordinates);
+
+    this.lat = coordinates.coords.latitude;
+    this.lng = coordinates.coords.longitude;
+    console.log(this.lat)
+    console.log(this.lng)
+    this.timestamp = coordinates.timestamp;
+    console.log('QRPage lat, lng:', this.lat, this.lng);
+
   }
+  
 
   finalizar(){
     this.router.navigate([`/dashboard-alumno`]);

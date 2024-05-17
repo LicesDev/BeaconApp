@@ -8,6 +8,8 @@ import { QrpagePageRoutingModule } from './qrpage-routing.module';
 
 import { QrpagePage } from './qrpage.page';
 
+import { MapComponent } from '../../componentes/map/map.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,6 @@ import { QrpagePage } from './qrpage.page';
     IonicModule,
     QrpagePageRoutingModule
   ],
-  declarations: [QrpagePage]
+  declarations: [QrpagePage, MapComponent,]
 })
 export class QrpagePageModule {}
